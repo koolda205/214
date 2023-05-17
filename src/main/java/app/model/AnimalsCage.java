@@ -7,9 +7,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class AnimalsCage {
 
-    @Qualifier("")
+    @Qualifier("dog")
     @Autowired
     private Animal animal;
+
+    @Autowired
+    private Timer timer;
 
     public void whatAnimalSay() {
         System.out.println("Say:");
@@ -17,5 +20,8 @@ public class AnimalsCage {
         System.out.println("At:");
         System.out.println(new Timer().getTime());
         System.out.println("________________________");
+    }
+    public Timer getTimer() {
+        return timer;
     }
 }

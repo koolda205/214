@@ -1,8 +1,6 @@
 package app.config;
 
-import app.model.Animal;
-import app.model.Cat;
-import app.model.Dog;
+import app.model.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,9 +17,15 @@ public class AppConfig {
     }
 
     @Bean(name="cat")
-    @Scope("prototype")
     public Cat getCat() {
         Animal cat = new Cat();
         return (Cat) cat;
+    }
+
+    @Bean(name="timer")
+    @Scope("prototype")
+    public Timer getTimer() {
+        Timer timer = new Timer();
+        return (Timer) timer;
     }
 }
